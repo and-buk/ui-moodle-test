@@ -2,6 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPageLocators:
+    """Класс c атрибутами - селекторами для поиска на веб-страницах элементов аутентификации пользователя."""
+
     LOGIN = (By.ID, "username")
     PASSWORD = (By.ID, "password")
     SUBMIT = (By.ID, "loginbtn")
