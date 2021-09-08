@@ -1,10 +1,13 @@
 import pytest
 
 from common.constants import LoginConstants
+from conftest import logger
 from models.auth import AuthData
 
 
 class TestAuth:
+    """Класс, представляющий набор тестов для проверки функции аутентификации пользователя."""
+
     def test_auth_valid_data(self, app):
         """
         Steps
@@ -40,5 +43,6 @@ class TestAuth:
         app.open_auth_page()
         data = AuthData.random()
         setattr(data, field, None)
+        logger.info(data.__dict__.values())
         app.login.auth(data)
         assert LoginConstants.AUTH_ERROR == app.login.auth_login_error(), "We are auth!"
