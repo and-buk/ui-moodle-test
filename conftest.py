@@ -44,7 +44,7 @@ def app(request):
     base_url = request.config.getoption("--base-url")
     logger.info(f"Start moodle {base_url}")
     chrome_options = Options()
-    chrome_options.headless = False
+    chrome_options.headless = True
     fixture = Application(
         webdriver.Chrome(
             ChromeDriverManager().install(), chrome_options=chrome_options
