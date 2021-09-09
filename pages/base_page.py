@@ -1,4 +1,5 @@
 from typing import Any
+from typing import List
 from typing import Optional
 
 from selenium.webdriver.remote.webelement import WebElement
@@ -25,7 +26,7 @@ class BasePage:
         )
         return element
 
-    def find_elements(self, locator: Any) -> WebElement:
+    def find_elements(self, locator: Any) -> List[WebElement]:
         """Находим все элементы на веб-странице согласно заданного локатора."""
         return self.app.driver.find_elements(*locator)
 
