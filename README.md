@@ -86,10 +86,10 @@ pip install -r requirements.txt
     ```
 - C **Allure** отчётом:
   - Генерируем тестовые данные для отчёта командой в командной строке Windows:
-      ```
-      pytest --alluredir=allure_reports
-      ```
+    ```
+    pytest --alluredir=allure_reports
+    ```
   - Создаём и открываем отчёт на странице браузера командой в командной строке Windows:
-      ```
-      allure serve allure_reports
-      ```
+    ```
+    allure serve allure_reports
+    ```
