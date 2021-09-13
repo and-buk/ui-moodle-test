@@ -31,7 +31,7 @@ class BasePage:
         return self.app.driver.find_elements(*locator)
 
     @staticmethod
-    def fill_element(element: Any, text: Optional[Any]) -> WebElement:
+    def fill_element(element: WebElement, text: Optional[Any]) -> WebElement:
         """Заполняем поле элемента веб-страницы текстом."""
         element.clear()
         if text:
@@ -39,13 +39,25 @@ class BasePage:
             return element
 
     @staticmethod
-    def click_element(element: Any) -> None:
+    def click_element(element: WebElement) -> None:
         """Активируем элемент веб-страницы "нажатием"."""
         element.click()
 
+    def get_clickable_element(self, locator: Any, wait_time: int = 2) -> WebElement:
+        """Активируем элемент веб-страницы "нажатием"."""
+        element = WebDriverWait(self.app.driver, wait_time).until(
+            EC.element_to_be_clickable(locator)
+        )
+        return element
+
     @staticmethod
-    def select_element(element: Any, text=None, value=None) -> None:
+    def select_element(element: WebElement, text=None, value=None) -> None:
+        """Активируем элемент веб-страницы "нажатием"."""
         if text:
             Select(element).select_by_visible_text(text)
         elif value:
             Select(element).select_by_value(value)
+
+    @staticmethod
+    def element_is_visible(element: WebElement):
+        return element.is_displayed()

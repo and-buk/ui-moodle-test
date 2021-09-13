@@ -13,16 +13,6 @@ class AccountPageLocators:
     COUNTRY_SELECT = (By.ID, "id_country")
     TIMEZONE_SELECT = (By.ID, "id_timezone")
     ABOUT_USER = (By.ID, "id_description_editoreditable")
-
-    # USER_IMAGE_MENU = (By.XPATH, "//*[text()='Изображение пользователя']")
-    ADD_IMAGE = (By.CLASS_NAME, "fp-btn-add")
-    UPLOAD_BY_URL = (By.XPATH, "//*[text()='Загрузка файлов по URL']")
-    IMAGE_URL_INPUT = (By.CSS_SELECTOR, "input#fileurl")
-    UPLOAD_IMAGE_BUTTON = (By.CLASS_NAME, "fp-btn-download")
-    IMAGE_ICON = (By.ID, "yui_3_17_2_1_1630690639356_3547")
-    CONFIRM_FILE = (By.ID, "yui_3_17_2_1_1630690639356_2979")
-    IMAGE_DESCRIPTION = (By.ID, "id_imagealt")
-
     NAME_DETAIL_BUTTON = (By.XPATH, "//*[text()='Дополнительная информация об имени']")
     FIRST_NAME_PHONETIC_INPUT = (By.ID, "id_firstnamephonetic")
     LAST_NAME_PHONETIC_INPUT = (By.ID, "id_lastnamephonetic")

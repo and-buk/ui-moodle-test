@@ -46,27 +46,6 @@ class AccountPage(BasePage):
     def about_user_input(self) -> WebElement:
         return self.find_element(AccountPageLocators.ABOUT_USER)
 
-    def add_image_button(self) -> WebElement:
-        return self.find_element(AccountPageLocators.ADD_IMAGE)
-
-    def upload_by_url(self) -> WebElement:
-        return self.find_element(AccountPageLocators.UPLOAD_BY_URL)
-
-    def image_url_input(self) -> WebElement:
-        return self.find_element(AccountPageLocators.IMAGE_URL_INPUT)
-
-    def upload_image_button(self) -> WebElement:
-        return self.find_element(AccountPageLocators.UPLOAD_IMAGE_BUTTON)
-
-    def image_select(self) -> WebElement:
-        return self.find_element(AccountPageLocators.IMAGE_ICON)
-
-    def confirm_file(self) -> WebElement:
-        return self.find_element(AccountPageLocators.CONFIRM_FILE)
-
-    def image_description_input(self) -> WebElement:
-        return self.find_element(AccountPageLocators.IMAGE_DESCRIPTION)
-
     def additional_name_button(self) -> WebElement:
         return self.find_element(AccountPageLocators.NAME_DETAIL_BUTTON)
 
@@ -122,7 +101,6 @@ class AccountPage(BasePage):
         self.select_element(self.country_select(), value=data.country)
         self.select_element(self.time_zone_select(), value=data.time_zone)
         self.fill_element(self.about_user_input(), data.about_user)
-        self.fill_element(self.image_description_input(), data.image_description)
         self.click_element(self.additional_name_button())
         self.fill_element(self.firstname_phonetic_input(), data.first_name_phonetic)
         self.fill_element(self.lastname_phonetic_input(), data.last_name_phonetic)
